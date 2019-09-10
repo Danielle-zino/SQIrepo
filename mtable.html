@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mtable</title>
+</head>
+<body style ="background-color: tomato">
+	
+		<center>
+			<legend style=""><b>MULTIPLICATION TABLE</b></legend>
+			<label><b>no of blocks</b></label>
+				<input type="number" id="call1" style="border: 2px solid;border-radius: 20px;width: 70px; height: 20px;font-size:17px;"><br><br>
+				<label><b>no of rows</b></label>
+				<input type="number" id="call2" style="border: 2px solid;border-radius: 20px;width: 70px; height: 20px;font-size: 17px;"><br><br>
+				<button style="border-radius: 10px;" onclick="multiply()"><b>submit</b></button>
+				<div id ="receive" style="background-color: tomato;color: #ffffff;font-size: 20px; width: 1000px; height: 400px; overflow: scroll;"></div>
+					
+				</center>
+				</div>
+					
+				
+		
+
+<script type="text/javascript">
+	function multiply() {
+		var y=call1.value;
+		var container = "<table border=2><tr>";
+		for (var t = 1; t <=y; t++){
+			container += "<td>";
+			for (var i = 1; i <= call2.value; i++) {
+				 container += t+ "*" +i+ "="+t*i+"<br>";
+         }
+			container +="</td>";
+		}
+		container+="<tr></table>";
+		receive.innerHTML += container; 
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calc</title>
+</head>    
+<body>
+	<script type="text/javascript">
+		var symbols,fvalue,svalue, state = false;
+		function soon (){
+			state= true;
+			myScreen.value="0";
+			son.style.display = "none";
+			sof.style.display = "inline";
+			
+		}
+
+		function mynumbs(a) {
+			if(state){
+				if (myScreen.value == 0) {
+				myScreen.value = a; 
+				// if (myScreen.value)
+				// myScreen.value += a;
+				} else if (myScreen.value !== "") {
+					myScreen.value
+
+					+= a;
+				}
+			}
+			else{
+				myScreen.value= "";
+			}
+		}
+			function mySymbol(w){
+				fvalue =parseFloat(myScreen.value);
+				myScreen.value= "";
+				symbols = w;
+				}
+// 
+				function arith(){
+					if (state){
+					svalue=parseFloat(myScreen.value);
+					if(symbols == '/'){
+						myScreen.value = fvalue / svalue;
+					}
+					else if(symbols == '+'){
+						myScreen.value = fvalue + svalue;
+					}         
+					else if(symbols == '-'){
+						myScreen.value = fvalue - svalue;	
+					} 
+					else if(symbols == '*'){
+						myScreen.value = fvalue * svalue;
+
+					}
+					else if(arith == '='){
+						myScreen.value ="";
+					
+					}
+				}
+			}
+				function TAN(){
+					// if (state) {
+						myScreen.value=Math.tan(myScreen.value );
+					// }
+					
+				}
+				function COS(){
+					if (state){
+			myScreen.value=Math.cos(myScreen.value);  
+
+		}
+	}
+					
+				
+				function SIN(){
+					// if (state) {
+					myScreen.value=Math.sin(myScreen.value );	
+					}
+					// }
+					
+		  		
+				function LOG(){
+					// if (state){
+					myScreen.value=Math.log(myScreen.value )
+		     		// }
+		     	}
+				function ROOT(){
+					// if (state){
+					myScreen.value=Math.sqrt(myScreen.value )
+				// }
+			}
+
+
+				function del() {
+					myScreen.value = myScreen.value.slice(0,-1)
+					// myScreen.value="";
+					
+				}
+		
+				
+					// function off(){	
+					// 	myScreen.value="";
+							
+					// 	}
+
+						function pie(){
+							if (state){
+				myScreen.value=myScreen.value *3.141592653589793;
+         }
+     }
+				function absolute(){
+					if (state){
+				myScreen.value=Math.abs(myScreen.value );
+			}
+			}
+			function square(){
+				if (state){
+					myScreen.value=Math.pow(myScreen.value ,2);
+				}
+			}				
+			
+				
+		 function soff() {
+			state = false;
+			sof.style.display = "none";
+			son.style.display = "inline";
+			myScreen.value = "";
+
+		}	
+
+ 
+	</script>
+	<form id="general">
+	<input type="" id="myScreen" name=""><br>
+	<!-- <div id="hello"> -->
+	<input type="button" id=""  value="tan" onclick="TAN('tan')" name="">
+	<input type="button" id=""  value="cos" onclick="COS('cos')" name="">
+	<input type="button" id=""  value="sin" onclick="SIN('sin')" name="">
+	<input type="button" id=""  value="log" onclick="LOG('log')" name="">
+	<input type="button" id=""  value="^" onclick="ROOT('^')" name=""><br>
+
+   
+	<input type="button" id="" value="0" onclick="mynumbs('0')" name="">
+	<input type="button" id=""   value="1" onclick="mynumbs('1')" name="">
+	<input type="button" id=""  value="2" onclick="mynumbs('2')" name="">
+	<input type="button" id=""  value="3" onclick="mynumbs('3')" name="">
+	<input type="button" id=""  value="4" onclick="mynumbs('4')" name=""><br>
+
+	<input type="button" id=""  value="5" onclick="mynumbs('5')" name="">
+	<input type="button" id=""  value="6" onclick="mynumbs('6')" name="">
+	<input type="button" id="" value="7" onclick=" mynumbs('7')" name="">
+	<input type="button" id="" value="8" onclick="mynumbs('8')" name="">
+	<input type="button" id="" value="9" onclick="mynumbs('9')" name=""><br>
+
+	<input type="button" id=""  value="/" onclick="mySymbol('/')" name="">
+	<input type="button" id=""  value="+" onclick="mySymbol('+')" name="">
+	<input type="button" id=""  value="-" onclick="mySymbol('-')" name="">
+	<input type="button" id=""  value="*" onclick="mySymbol('*')" name="">
+	<input type="button" id=""  value="=" onclick="arith()" name=""><br>
+
+	<input type="button" id="son"  value="on" onclick="soon()" name="">
+	<input type="button" id="sof"  value="off" onclick="soff()" name="">
+	<input type="button" id="" value="del" onclick="del()" name="">
+	<input type="button" id="" value="PI" onclick="pie('PI')" name="">
+	<input type="button" id=""  value="+VE" onclick="absolute('+ve')" name="">
+	<input type="button" id=""  value="RT" onclick="square('sqrt')" name=""><br>
+
+
+</form> 
+</body>
+</html>
+<style type="text/css">
+#general{
+	border:2px solid black;
+	width: 280px;
+	height: 450px;
+	background-color: grey;
+	border-radius: 25px;
+	padding-left: 40px;
+	padding-right: 5px; 
+
+}
+#myScreen{
+	margin-top: 40px;
+	margin-bottom: 20px;
+	height: 40px;
+	width: 155px;
+	padding-left: 83px;
+	background-color:white; 
+
+}
+
+
+
+
+
+input[type="button"]{
+	height:60px;
+	width: 45px;
+	padding-right:  5px;
+	border-radius: 20px;
+	background-color: black;
+	color: white;
+
+}
+#sof {
+	display: none;
+}
+</style>

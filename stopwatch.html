@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My StopWatch</title>
+	<style type="text/css">
+		#clock{
+			position: fixed;
+			padding-top: 20px;
+			margin-top: 20px;
+			margin-bottom: 50px;
+		}
+		.set{
+			position: relative;
+			padding-top: -80px;
+		}
+		#div{
+
+		}
+	</style>
+	<script type="text/javascript">
+		var dav;
+		function startTimer() {
+			var ml = milli.innerHTML;
+			ml++;
+			milli.innerHTML = ml;
+			dav = setTimeout(startTimer, 10);
+			
+			if (milli.innerHTML > 99){
+				milli.innerHTML = 0;
+				seconds.innerHTML++;
+		
+			 if (seconds.innerHTML > 59){
+				seconds.innerHTML = "00";
+				minutes.innerHTML++;
+				}
+			
+			if (minutes.innerHTML > 59){
+				hours.innerHTML++;
+				minutes.innerHTML = 0;
+			
+			}
+
+			}
+			
+		 }
+		 function laptime(){
+		 	div.innerHTML += hours.innerHTML +":"+ minutes.innerHTML +":"+ seconds.innerHTML +":"+ milli.innerHTML +"<br/>";
+		 }
+		 function refresh(){
+		 	clearTimeout(dav);
+		 	milli.innerHTML = "00";
+		 	seconds.innerHTML = "00";
+		 	minutes.innerHTML = "00";
+		 	hours.innerHTML = "00";
+		 }
+		// function expand(){
+		// 	window.document.getElementById(dav);
+		// }
+
+	</script>
+</head>
+<body style="background-color: cyan;">
+<center>
+	<div>
+		<table>
+			<h4>Royal Stopwatch</h4>
+			<tr id="clock">
+				<center><td id="hours" style=" font-size: 50px ">00</td>
+				<td  style=" font-size: 40px">:</td>
+				<td id="minutes" style=" font-size: 50px">00</td>
+				<td align="center"  style=" font-size: 40px">:</td>
+				<td id="seconds" style=" font-size: 50px">00</td>
+				<td style=" font-size: 40px">:</td>
+				<td id="milli" style=" font-size: 20px; color: red">00</td></center>
+			</tr>
+			<div>
+			
+				<button onclick="refresh()" style="border-radius:10px; background-color: black; color: white;">Refresh</button>
+				<button onclick="startTimer()" style="border-radius: 10px; background-color: black; color: white;">Start</button>
+				<button onclick="expand()"  style="border-radius: 10px; background-color: black; color: white;">Fullscreen</button>
+				<button onclick="laptime()"  style="border-radius: 10px; background-color: black; color: white;">lap</button>
+		
+			</div>
+			<div id="div" ></div>
+		</table>
+	</div>
+</center>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>emoji</title>
+	<style type="text/css">
+		
+	</style>
+</head~
+>
+<body onload="dS()">
+	<canvas id="myCanvas" height="500" width="500"></canvas>
+<script type="text/javascript"> 
+	var a = document.getElementById('myCanvas');
+	var pencil = a.getContext('2d');
+	
+	function dS()
+	{
+		pencil.arc(250, 250, 200, 0, 2 * Math.PI);
+	 pencil.fillStyle="yellow";
+	 pencil.lineWidth="2";
+	 pencil.fill();
+	 pencil.stroke();
+	 pencil.beginPath();
+	 pencil.arc(150,200,15,0,2 * Math.PI);
+	 pencil.fillStyle="black";
+	 pencil.fill();
+	 pencil.stroke();
+	 pencil.beginPath();
+	 pencil.arc(350,200,15,0,2 * Math.PI);
+	 pencil.fillstyle="black";
+	 pencil.fill();
+	 pencil.stroke();
+	 pencil.moveTo(150,350)
+	 pencil.quadraticCurveTo(250,450,350,350);
+	 pencil.stroke();
+	} 
+</script>
+
+
+
+
+
+</body> 
+</html>
